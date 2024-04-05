@@ -26,7 +26,14 @@ public class LionTest {
         Lion lion = new Lion("Самка", feline);
         Assert.assertFalse(lion.doesHaveMane());
     }
-
+    @Test
+    public void getNotFemaleNotMaleTest(){
+        try {
+            new Lion("Ни самец ни самка", feline);
+        } catch (Exception e) {
+            Assert.assertEquals("Используйте допустимые значения пола животного - самей или самка", e.getMessage());
+        }
+    }
 
 
 
